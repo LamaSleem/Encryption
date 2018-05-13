@@ -1,0 +1,20 @@
+
+syntax = "proto3";
+
+package proto;
+
+service EncryptionService{
+  rpc Encrypt (RequestText) returns (encryptedMessage){}
+
+}
+
+
+
+
+message RequestText {
+  string plainMessage = 1;
+}
+
+message EncryptedTest {
+string encryptedMessage = 1;
+}
