@@ -4,17 +4,23 @@ syntax = "proto3";
 package proto;
 
 service EncryptionService{
-  rpc Encrypt (RequestText) returns (encryptedMessage){}
+  rpc Encrypt(RequestText) returns (EncryptedText) {}
+  rpc Reverse(InputString) returns (ReveresedString){}
 
 }
 
-
-
-
-message RequestText {
+ message RequestText {
   string plainMessage = 1;
 }
 
-message EncryptedTest {
-string encryptedMessage = 1;
+message EncryptedText {
+  string encryptedMessage = 1;
+}
+
+message InputString{
+  string initalInput = 1;
+}
+
+message ReveresedString{
+  string finalOutput = 1;
 }
